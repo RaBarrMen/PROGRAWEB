@@ -1,0 +1,1225 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0MEY0YXK6T"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0MEY0YXK6T');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="2dcWFRRkOG5H4PWMPccH4gGclZlxaw28y673YJiv">
+
+    <title>CETECH - Sistema de Información Escolar</title>
+    <link rel="stylesheet" href="https://cetech.celaya.tecnm.mx/css/app.css">
+    <link rel="stylesheet" href="https://cetech.celaya.tecnm.mx/css/autocompleter.css">
+    <link rel="stylesheet" href="https://cetech.celaya.tecnm.mx/jqueryui-editable/css/jqueryui-editable.css">
+    <link rel="stylesheet" href="https://cetech.celaya.tecnm.mx/css/checkbox_off.css">
+    <link rel="stylesheet" href="https://cetech.celaya.tecnm.mx/css/dataTables.bootstrap.min.css">       
+    <link rel="stylesheet" href="https://cetech.celaya.tecnm.mx/css/module.css">                     
+
+    <!--  estilo institucion -->
+    
+        <link rel="stylesheet" href="https://cetech.celaya.tecnm.mx/css/css_110002.css">
+
+    
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <!-- chosen -->
+    <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.css">
+
+</head>
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to to the body tag
+to get the desired effect
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
+
+<body class="hold-transition sidebar-mini sidebar-collapse">
+    <div id="app" class="wrapper">
+        <!-- Navbar -->
+        <nav id="main-header" class="main-header navbar navbar-expand navbar-white navbar-light border-bottom shadow">
+            <!-- Left navbar links -->
+                            <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+                    </li>
+
+                    <li class="nav-item d-none d-sm-inline-block">
+                        <a href="https://cetech.celaya.tecnm.mx/home" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            Inicio
+                        </a>
+                    </li>
+
+                    
+                </ul>
+                        <!-- SEARCH FORM -->
+            <!--form class="form-inline ml-3">
+        <div class="input-group input-group-sm">
+          <input class="form-control form-control-navbar" type="search" placeholder="Buscar" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-navbar" type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </form-->
+
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <!-- Authentication Links -->
+                                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            RAFAEL BARRANCO MENDOZA <span class="caret"></span>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                            <!--a class="dropdown-item" href="https://cetech.celaya.tecnm.mx/logout">
+                                                                                                                                                                                              <i class="fas fa-user"></i>
+                                                                                                                                                                                              Perfil
+                                                                                                                                                                                            </a-->
+                            <a class="dropdown-item" href="https://cetech.celaya.tecnm.mx/changePassword">
+                                <i class="fas fa-key"></i>
+                                Cambiar Contraseña
+                            </a>
+                            <a class="dropdown-item" href="https://cetech.celaya.tecnm.mx/logout"
+                                onclick="event.preventDefault();
+                                                  document.getElementById('logout-form').submit();">
+                                <i class="fas fa-power-off"></i>
+                                Salir
+                            </a>
+                            <form id="logout-form" action="https://cetech.celaya.tecnm.mx/logout" method="POST" style="display: none;">
+                                <input type="hidden" name="_token" value="2dcWFRRkOG5H4PWMPccH4gGclZlxaw28y673YJiv">                            </form>
+                        </div>
+                    </li>
+                            </ul>
+        </nav>
+        <!-- /.navbar -->
+
+        <!-- Main Sidebar Container -->
+                    <aside class="main-sidebar sidebar-dark-primary elevation-4 sidebar-no-expand">
+                <!-- Brand Logo -->
+                <a href="https://cetech.celaya.tecnm.mx/home" class="brand-link text-sm">
+                    <img src="/img/logo.png" width="32px" height="32px" alt="Logo empresa"
+                        class="brand-image img-circle elevation-3" style="opacity: .8">
+                    <span class="brand-text font-weight-light">SIEWEB</span>
+                </a>
+
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <!-- Sidebar user panel (optional) -->
+                    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                        <div class="image">
+                            <img src="/img/profile.png" class="img-circle elevation-2" alt="User Image">
+                        </div>
+                        <div class="info">
+                            <a href="#" class="d-block"> RAFAEL BARRANCO MENDOZA</a>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar Menu -->
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column nav-flat nav-legacy nav-compact nav-child-indent"
+                            data-widget="treeview" role="menu" data-accordion="false">
+                            <li class="nav-item">
+                                <a href="https://cetech.celaya.tecnm.mx/logout" class="nav-link"
+                                    onclick="event.preventDefault();
+                                                  document.getElementById('logout-form-nav').submit();">
+                                    <i class="nav-icon fas fa-power-off"></i>
+                                    <p> Salir</p>
+                                </a>
+
+                                <form id="logout-form-nav" action="https://cetech.celaya.tecnm.mx/logout" method="POST"
+                                    style="display: none;">
+                                    <input type="hidden" name="_token" value="2dcWFRRkOG5H4PWMPccH4gGclZlxaw28y673YJiv">                                </form>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- /.sidebar-menu -->
+                </div>
+                <!-- /.sidebar -->
+            </aside>
+                <!-- Content Wrapper. Contains page content -->
+        <div id="content-wrapper" class="content-wrapper">
+
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                                    <div class="container-fluid">
+                        <div class="row mb-2">
+                            <div class="col-sm-6">
+                                <h1 class="m-0 text-dark"></h1>
+                            </div><!-- /.col -->
+                            <div class="col-sm-6">
+                                <ol class="breadcrumb float-sm-right">
+                                    <li class="breadcrumb-item"><a href="https://cetech.celaya.tecnm.mx/home">Inicio</a>
+                                    </li>
+                                    <li class="breadcrumb-item active"></li>
+                                </ol>
+                            </div><!-- /.col -->
+                        </div><!-- /.row -->
+                    </div><!-- /.container-fluid -->
+                            </div>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                                                    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+
+                <!--Inicio de mensajes -->
+                                <!--Fin de mensajes -->
+
+                                                    
+                                                    
+                <div class="card">
+                    <div class="card-header">Panel Principal</div>
+
+                    <div class="card-body">
+                                                <div class="row">
+                                                            
+                                                                            <div class="col-12 col-sm-6 col-md-3">
+        <div class="info-box">
+            <span class="info-box-icon bg-info elevation-1"><i class="fas fa-battery-half"></i></span>
+            <div class="info-box-content">
+                <span class="info-box-text">Creditos acumulados</span>
+                <span class="info-box-number">
+                146
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-3">
+        <div class="info-box mb-3">
+            <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-down"></i></span>
+
+            <div class="info-box-content">
+            <span class="info-box-text">Materias reprobadas</span>
+            <span class="info-box-number">6</span>
+            </div>
+        </div>
+    </div>
+
+        <!-- fix for small devices only -->
+        <div class="clearfix hidden-md-up"></div>
+
+    <div class="col-12 col-sm-6 col-md-3">
+        <div class="info-box mb-3">
+            <span class="info-box-icon bg-success elevation-1"><i class="fas fa-thumbs-up"></i></span>
+
+            <div class="info-box-content">
+            <span class="info-box-text">Materias aprobadas</span>
+            <span class="info-box-number">32</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-3">
+        <div class="info-box mb-3">
+            <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-tasks"></i></span>
+
+            <div class="info-box-content">
+            <span class="info-box-text">Promedio general</span>
+            <span class="info-box-number">83.645</span>
+            </div>
+        </div>
+    </div>
+
+<div class="col-2">
+</div>
+<div class="col-8 d-flex align-items-stretch flex-column">
+    <div class="card bg-light d-flex flex-fill">
+        <div class="card-header text-muted border-bottom-0">
+            Número de control: 21031439
+        </div>
+        <div class="card-body pt-0">
+            <div class="row">
+            <div class="col-7">
+                <h2 class="lead"><b>
+                RAFAEL
+                BARRANCO
+                MENDOZA
+                </b></h2>
+                <p class="text-muted text-sm"><b>Ingeniería en Sistemas Computacionales</b></p>
+                <ul class="ml-4 mb-0 fa-ul text-muted">
+                    <li class="small"><span class="fa-li"><i class="fas fa-cube"></i></span>Semestre: 8</li>
+                    <li class="small"><span class="fa-li"><i class="fas fa-cube"></i></span>Grupo: </li>
+                    <li class="small"><span class="fa-li"><i class="fas fa-cube"></i></span>Sede: 
+                                                    C.Celaya
+                            
+                    </li>
+                    <li class="small"><span class="fa-li"><i class="fas fa-cube"></i></span>Estatus: Vigente Reingreso</li>
+                </ul>
+            </div>
+            <div class="col-5 text-center">
+                                    <img src="data:image/jpeg;base64, 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"
+                        width="124px" class=" elevation-2"
+                        alt="User Image">
+                            </div>
+            </div>
+        </div>
+
+        <div class="card-footer">
+
+        </div>
+
+    </div>
+</div>
+
+<div class="col-2">
+</div> 
+                                                                    
+                                                                                                                        <!--if vaidarRoles-->
+                                                                                                                                                                                    <div class="col-sm-4 ">
+                                                <div class="card">
+                                                                                                        <div class="card-body">
+                                                        <h5 class=""><i class="fas fa-chalkboard-teacher"></i>
+                                                            Datos de contacto
+                                                        </h5>
+                                                        <p class="card-text">Modifica tus datos de contacto.</p>
+                                                        <a href="https://cetech.celaya.tecnm.mx/estudiantes/edit_datos_contacto"
+                                                            class="btn btn-primary">Acceder
+                                                            <i class="fa fa-arrow-right"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                                                                <!--if sub 14-->
+                                                                <!--if vaidarRoles-->
+                                                                                            <!--if vaidarRoles-->
+                                                                                                                                                                                    <div class="col-sm-4 ">
+                                                <div class="card">
+                                                                                                        <div class="card-body">
+                                                        <h5 class=""><i class="fas fa-chalkboard-teacher"></i>
+                                                            Datos Personales
+                                                        </h5>
+                                                        <p class="card-text">Modifica tus datos personales.</p>
+                                                        <a href="https://cetech.celaya.tecnm.mx/estudiantes/edit_datos_personales"
+                                                            class="btn btn-primary">Acceder
+                                                            <i class="fa fa-arrow-right"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                                                                <!--if sub 14-->
+                                                                <!--if vaidarRoles-->
+                                                                                            <!--if vaidarRoles-->
+                                                                                            <!--if vaidarRoles-->
+                                                        <!--Endforeach rol-->
+
+                                                                                                                                                                                    <div class="col-sm-4 ">
+                                                <div class="card">
+                                                                                                        <div class="card-body">
+                                                        <h5 class=""><i class="fas fa-file-alt"></i>
+                                                            Documentos
+                                                        </h5>
+                                                        <p class="card-text">Sube tus documentos digitales.</p>
+                                                        <a href="https://cetech.celaya.tecnm.mx/documentos"
+                                                            class="btn btn-primary">Acceder
+                                                            <i class="fa fa-arrow-right"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                                                                                            <!--if vaidarRoles-->
+                                                                                            <!--if vaidarRoles-->
+                                                                                                                                                                                    <div class="col-sm-4 ">
+                                                <div class="card">
+                                                                                                        <div class="card-body">
+                                                        <h5 class=""><i class="fas fa-clipboard-list"></i>
+                                                            Gestión de Pagos
+                                                        </h5>
+                                                        <p class="card-text">Gestión de pagos y estados de cuenta</p>
+                                                        <a href="https://cetech.celaya.tecnm.mx/estudiantes/cuenta_pagos"
+                                                            class="btn btn-primary">Acceder
+                                                            <i class="fa fa-arrow-right"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                                                                                            <!--if vaidarRoles-->
+                                                                                                                                                                                    <div class="col-sm-4 ">
+                                                <div class="card">
+                                                                                                        <div class="card-body">
+                                                        <h5 class=""><i class="fas fa-clipboard-list"></i>
+                                                            Materias Inscritas
+                                                        </h5>
+                                                        <p class="card-text">Consulta tus calificaciones</p>
+                                                        <a href="https://cetech.celaya.tecnm.mx/estudiantes/materias_inscritas"
+                                                            class="btn btn-primary">Acceder
+                                                            <i class="fa fa-arrow-right"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                                                                                            <!--if vaidarRoles-->
+                                                                                                                                                                                    <div class="col-sm-4 ">
+                                                <div class="card">
+                                                                                                        <div class="card-body">
+                                                        <h5 class=""><i class="fas fa-clipboard-list"></i>
+                                                            Kardex
+                                                        </h5>
+                                                        <p class="card-text">Consulta tus calificaciones</p>
+                                                        <a href="https://cetech.celaya.tecnm.mx/estudiantes/kardex"
+                                                            class="btn btn-primary">Acceder
+                                                            <i class="fa fa-arrow-right"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                                                                                            <!--if vaidarRoles-->
+                                                                                                                                                                                    <div class="col-sm-4 ">
+                                                <div class="card">
+                                                                                                        <div class="card-body">
+                                                        <h5 class=""><i class="fa fa-arrow-right"></i>
+                                                             Antecedente escolar
+                                                        </h5>
+                                                        <p class="card-text">Modifica tu antecedente escolar.</p>
+                                                        <a href="https://cetech.celaya.tecnm.mx/estudiantes/edit_datos_antecedentes"
+                                                            class="btn btn-primary">Acceder
+                                                            <i class="fa fa-arrow-right"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                                                                                            <!--if vaidarRoles-->
+                                                                                                                                                                                    <div class="col-sm-4 ">
+                                                <div class="card">
+                                                                                                        <div class="card-body">
+                                                        <h5 class=""><i class="fas fa-file-alt"></i>
+                                                            Grupos finales
+                                                        </h5>
+                                                        <p class="card-text">Listado de grupos finales</p>
+                                                        <a href="https://cetech.celaya.tecnm.mx/estudiantes/consulta_grupos_finales"
+                                                            class="btn btn-primary">Acceder
+                                                            <i class="fa fa-arrow-right"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                                                                                            <!--if vaidarRoles-->
+                                                                                                                                                                                    <div class="col-sm-4 ">
+                                                <div class="card">
+                                                                                                        <div class="card-body">
+                                                        <h5 class=""><i class="fas fa-file-alt"></i>
+                                                            Horario de inscripción
+                                                        </h5>
+                                                        <p class="card-text">Consulta la fecha y hora de inscripción</p>
+                                                        <a href="https://cetech.celaya.tecnm.mx/estudiantes/fecha_hora_inscripcion"
+                                                            class="btn btn-primary">Acceder
+                                                            <i class="fa fa-arrow-right"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                                                                                            <!--if vaidarRoles-->
+                                                                                                                                                                                    <div class="col-sm-4 ">
+                                                <div class="card">
+                                                                                                        <div class="card-body">
+                                                        <h5 class=""><i class="fas fa-clipboard-list"></i>
+                                                            Residencias profesionales
+                                                        </h5>
+                                                        <p class="card-text">Módulo de residencias </p>
+                                                        <a href="https://cetech.celaya.tecnm.mx/residencias"
+                                                            class="btn btn-primary">Acceder
+                                                            <i class="fa fa-arrow-right"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                                                                                            <!--if vaidarRoles-->
+                                                                                            <!--if vaidarRoles-->
+                                                                                            <!--if vaidarRoles-->
+                                                                                                                                                                                    <div class="col-sm-4 ">
+                                                <div class="card">
+                                                                                                        <div class="card-body">
+                                                        <h5 class=""><i class="fas fa-clipboard-list"></i>
+                                                            Titulación
+                                                        </h5>
+                                                        <p class="card-text">Módulo de titulación</p>
+                                                        <a href="https://cetech.celaya.tecnm.mx/titulacion"
+                                                            class="btn btn-primary">Acceder
+                                                            <i class="fa fa-arrow-right"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                                                                                            <!--if vaidarRoles-->
+                                                                                            <!--if vaidarRoles-->
+                                                                                                                                                                                    <div class="col-sm-4 ">
+                                                <div class="card">
+                                                                                                        <div class="card-body">
+                                                        <h5 class=""><i class="fa fa-graduation-cap"></i>
+                                                            Citas
+                                                        </h5>
+                                                        <p class="card-text">Módulo de citas</p>
+                                                        <a href="https://cetech.celaya.tecnm.mx/citas"
+                                                            class="btn btn-primary">Acceder
+                                                            <i class="fa fa-arrow-right"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                                                                                            <!--if vaidarRoles-->
+                                                                                                                                                                                    <div class="col-sm-4 ">
+                                                <div class="card">
+                                                                                                        <div class="card-body">
+                                                        <h5 class=""><i class="fas fa-chalkboard-teacher"></i>
+                                                            Centro de Idiomas
+                                                        </h5>
+                                                        <p class="card-text">Sistema del centro de idiomas</p>
+                                                        <a href="https://cetech.celaya.tecnm.mx/estudiantes/to_ciit"
+                                                            class="btn btn-primary">Acceder
+                                                            <i class="fa fa-arrow-right"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                                                                                            <!--if vaidarRoles-->
+                                                                                            <!--if vaidarRoles-->
+                                                        <!--Endforeach rol-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+
+        <!-- Main Footer -->
+        <footer class="main-footer">
+            <strong> Copyright&copy; 2025 .</strong>
+            All
+            rights reserved.
+
+            <div class="float-right d-none d-sm-inline-block">
+                <b>Version</b> 1.0
+            </div>
+            <div class="d-none d-sm-inline-block">
+                <a href="https://cetech.celaya.tecnm.mx/informacion/aviso_privacidad">
+                    Aviso de privacidad
+                </a>
+            </div>
+
+        </footer>
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- REQUIRED SCRIPTS -->
+    <script src="https://cetech.celaya.tecnm.mx/js/app.js"></script>
+    <script src="https://cetech.celaya.tecnm.mx/js/bootstrap3-typeahead.js"></script>
+    <script src="https://cetech.celaya.tecnm.mx/jqueryui-editable/js/jqueryui-editable.min.js"></script>
+    <script src="https://cetech.celaya.tecnm.mx/js/chosen.jquery.js"></script>
+    <script src="https://cetech.celaya.tecnm.mx/js/chosen.proto.js"></script>
+    <script src="https://cetech.celaya.tecnm.mx/js/checkbox_off.js"></script>
+    <script src="https://cetech.celaya.tecnm.mx/js/jquery.mask.min.js"></script>
+
+    <script src="https://cetech.celaya.tecnm.mx/js/jquery.dataTables.min.js"></script>
+    <script src="https://cetech.celaya.tecnm.mx/js/dataTables.bootstrap.min.js"></script>
+
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/smartwizard@6/dist/js/jquery.smartWizard.min.js" type="text/javascript">
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/smartwizard@6/dist/css/smart_wizard_all.min.css" rel="stylesheet"
+        type="text/css" />
+    <script href="https://cetech.celaya.tecnm.mx/js/pagination.min.js" type="text/javascript"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    
+    
+    <script>
+        $(document).ready(function() {
+            $(".chosen-select").chosen();
+            //new DataTable('#data-table');
+            new DataTable('#data-table', {
+                info: false,
+                ordering: false,
+                paging: false,
+                language: {
+                    search: 'Buscar'
+                }
+            });
+        });
+    </script>
+
+    </body>
+
+</html>
